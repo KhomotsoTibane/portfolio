@@ -1,0 +1,120 @@
+import React, { useEffect } from "react";
+import "./experience.css";
+
+const experience = () => {
+  useEffect(() => {
+    console.log("Loading TagCanvas...");
+    const TagCanvas = window.TagCanvas;
+    const tagCanvasOptions = {
+      textColour: "#4db5ff",
+      outlineThickness: 0.5,
+      outlineColour: "",
+      maxSpeed: 0.06,
+      freezeActive: true,
+      shuffleTags: true,
+      shape: "sphere",
+      zoom: 1,
+      wheelZoom: false,
+      noSelect: true,
+      textFont: null,
+      freezeDecel: true,
+      fadeIn: 3000,
+      initial: [0.3, -0.1],
+      depth: 1,
+    };
+    try {
+      TagCanvas.Start("tagcanvas", "tags", tagCanvasOptions);
+    } catch (e) {
+      console.log("Canvas error.");
+      console.log(e);
+    }
+  }, []);
+
+  return (
+    <section id="experience">
+      <h6>Skills I have</h6>
+      <h2>My Experience</h2>
+      <div className="app__experience-container app__container">
+        <div className="app__experience-left">
+          <p>
+            Over the past years I have been working on my knowledge in the languages already I know,
+            to learn new languages and technologies within the tech environment. Here is a list of
+            the languages and concepts that I have covered on my journey thus far:
+          </p>
+        </div>
+        <div className="app__experience-right">
+          <h3>Technologies</h3>
+          <canvas width="400px" height="400px" id="tagcanvas" className="app__experience-tagCanvas">
+            <ul id="tags">
+              <li className="app__text-light">
+                <p>HTML</p>
+              </li>
+              <li className="app__text-light">
+                <a href="#" target="_blank">
+                  CSS
+                </a>
+              </li>
+              <li className="app__text-light">
+                <a href="#" target="_blank">
+                  Javascript
+                </a>
+              </li>
+              <li className="app__text-light">
+                <a href="#" target="_blank">
+                  MY SQL
+                </a>
+              </li>
+              <li className="app__text-light">
+                <a href="#" target="_blank">
+                  C#
+                </a>
+              </li>
+              <li className="app__text-light">
+                <a href="#" target="_blank">
+                  Mongo db
+                </a>
+              </li>
+              <li className="app__text-light">
+                <a href="#" target="_blank">
+                  Tailwind
+                </a>
+              </li>
+              <li className="app__text-light">
+                <a href="#" target="_blank">
+                  AWS Amplify
+                </a>
+              </li>
+              <li className="app__text-light">
+                <a href="#" target="_blank">
+                  Next Js
+                </a>
+              </li>
+              <li className="app__text-light">
+                <a href="#" target="_blank">
+                  JQuery
+                </a>
+              </li>
+              <li className="app__text-light">
+                <a href="#" target="_blank">
+                  Git
+                </a>
+              </li>
+              <li className="app__text-light">
+                <a href="#" target="_blank">
+                  React Js
+                </a>
+              </li>
+              <li className="app__text-light">
+                <a href="#" target="_blank">
+                  GitHub
+                </a>
+              </li>
+            </ul>
+          </canvas>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default experience;
